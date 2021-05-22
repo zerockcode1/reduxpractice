@@ -1,32 +1,22 @@
 import Couter2 from "./components/Couter2";
-import {useState} from "react";
-
-import {createContext} from "react";
-
-
-const CountContext = createContext({})
-
-export default CountContext
+import {useReducer, useState} from "react";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
+import {countReducer} from "./reducers/countReducer";
+import ReduxCounter from "./components/ReduxCounter";
 
 
 function App() {
-    const [count, setCount] = useState(10)
 
-    const ctxObj = {
-        count: count,
-        change: (num) => {
-            setCount(count + num)
-        }
-    }
 
   return (
+    <Provider store={createStore(countReducer)}>
     <div>
-      <CountContext.Provider value={ctxObj} >
-          <Couter2></Couter2>
-          <Couter2></Couter2>
-          <Couter2></Couter2>
-      </CountContext.Provider>
+      <ReduxCounter></ReduxCounter>
+      <ReduxCounter></ReduxCounter>
+      <ReduxCounter></ReduxCounter>
     </div>
+    </Provider>
   );
 }
 

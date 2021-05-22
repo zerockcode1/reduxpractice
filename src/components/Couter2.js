@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
-import CountContext from "../context/CountContext";
+import {CountContext} from "../App";
 
 const Couter2 = () => {
 
-    const valueObj = useContext(CountContext)
+    const valueObj = 10;//useContext(CountContext)
 
     console.log(valueObj)
 
