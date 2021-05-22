@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CountContext from "./context/CountContext";
 
-const initCounter = {count:10}
 
 ReactDOM.render(
   <React.StrictMode>
-    <CountContext.Provider value={initCounter}>
+
     <App />
-    </CountContext.Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
