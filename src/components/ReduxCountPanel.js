@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 const ReduxCountPanel = ({num}) => {
 
-    const count = useSelector(state => state.count)
+    const count = useSelector(state => state.countReducer.count)
 
     return (
         <div>
